@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>体重を管理しよう</title>
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/sample.css">
+  <style>
+    #key2 {
+      border: 3px solid #000;
+      margin: 20px 0;
+      height: 40px;
+    }
+  </style>
+</head>
+<!--表示される部分-->
+<body>
+  <header>
+    <h1>体重のメモ帳</h1>
+    <p>📅から日付を選んでクリックしよう<br>黄色のBOXは体重（数値）だけ‼➡「登録」をクリック</p>
+  </header>
+  <main>
+    
+    <!-- ボタン-->
+    <input type="date" id="key" >
+    <textarea id="memo"> </textarea>
+    <ul>
+      <li id="save">登録</li>
+      <li id="clear">ﾃﾞｰﾀ削除</li>
+    </ul>
+
+    </main>
+  <table id="list">
+    <!-- ここに追加データが挿入される -->
+  </table>
+  <script>
+   
+    //1.Save クリックイベント
+    $("#save").on("click", function () {
+
+      const key = $("#key").val();
+      const value = $("#memo").val();
+
+      // ここがローカルストレージ保存先
+      localStorage.setItem(key, value);
+
+      //一覧表示に追加
+        const html = `
+      <tr>
+        <th>${key}</th>
+        <td>${value}</td>
+      </tr>`;
+
+      $("#list").append(html);
+
+      // 全ての処理が終わったら、中身を消す
+      $("#key").val("");
+      $("#memo").val("");
+    });
+
+    //2.clear クリックイベント
+    $("#clear").on("click", function () {
+
+      // 全て削除ボタン
+      localStorage.clear();
+
+      // htmlのid="list"の中身を消す
+      $("#list").empty();
+    });
+
+    //3.ページ読み込み：保存データ取得表示
+    for(let i = 0; i < localStorage.length; i++){
+      const key = localStorage.key(i)
+      const value = localStorage.getItem(key)
+
+      // テンプレートリテラルに書き換えた
+      const html = `
+      <tr>
+        <th>${key}</th>
+        <td>${value}</td>
+      </tr>`;
+
+      $("#list").append(html);
+    }
+
+
+
+
+
+  </script>
+  <footer><small>Go's</small></footer>
+</body>
+
+</html>

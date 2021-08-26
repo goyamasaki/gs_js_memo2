@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 32px;
+  width: 90%;
+}
+
+input , select , textarea , button{
+  -webkit-appearance: none;
+}
+
+header {
+  background-color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 100%;
+  background-color: antiquewhite;
+}
+
+
+main {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+footer {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+p {
+  font-size: 20px;
+    text-align: center;
+    border-bottom: 0;
+    height: 36px;
+}
+ul {
+  padding: 0;
+  border-top: 1px solid #000000;
+  display: table; /* 定義 */
+  table-layout: fixed;
+  width: 96%;
+  font-size: 80%;
+  margin: 0 3%;
+  text-align: center;
+}
+li {
+  list-style-type: none;
+  border: 1px solid #666;
+  background-color: #fff;
+  display: table-cell; /* 定義 */
+  cursor: pointer;
+  color: #0d7dfd;
+}
+li:hover {
+  background: #0d7dfd;
+  color: #fff;
+}
+
+textarea {
+  width: 16%;
+  height: 38px;
+  font-size: 80%;
+  background-color: yellow;
+  resize: none;
+  }
+
+#key {
+  margin: 0 3%;
+  width: 70%;
+  font-size: 80%;
+  background-color: #e1efff;
+ }
+table {
+  margin: 20px 3%;
+  border: 1px solid #8dc3f5;
+  width: 96%;
+}
+th {
+  width: 26%;
+  font-size: 20px;
+  background-color: #d0e7fc;
+  border-bottom: 1px solid #8dc3f5;
+  }
+td {
+  font-size: 16px;
+  background-color: rgb(241, 239, 239);
+  border-bottom: 1px solid #8dc3f5;
+  }
+input {
+  margin: 10px 3%;
+  width: 95%;
+  height: 40px;
+  font-size: 80%;
+}
